@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>basket-share</artifactId>
+    <name>Share Cart Module</name>
+    <packaging>jar</packaging>
+
+    <parent>
+        <groupId>fr.smile.alfresco</groupId>
+        <artifactId>basket</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>${alfresco.groupId}</groupId>
+            <artifactId>share</artifactId>
+            <type>war</type>
+        </dependency>
+    </dependencies>
+    <build>
+        <!-- In certain cases we do build time filtering with the single sourcing application.properties -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>src/main/webapp</directory>
+                <targetPath>${project.build.directory}/classes/META-INF</targetPath>
+            </resource>
+            <resource>
+                <directory>.</directory>
+                <includes>
+                    <include>file-mapping.properties</include>
+                </includes>
+                <targetPath>${project.build.directory}/${project.build.finalName}</targetPath>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <overlays>
+                        <!-- The current project customizations -->
+                        <overlay/>
+                        <!-- The Share WAR -->
+                        <overlay>
+                            <groupId>${alfresco.groupId}</groupId>
+                            <artifactId>share</artifactId>
+                            <type>war</type>
+                            <!-- To allow inclusion of META-INF -->
+                            <excludes/>
+                        </overlay>
+                        <!-- Add / order your AMPs here -->
+                        <!-- <overlay> <groupId>${alfresco.groupId}</groupId> <artifactId>alfresco-wcm-quickstart-share</artifactId> <type>amp</type> </overlay> -->
+                    </overlays>
+                </configuration>
+            </plugin>
+            <!--<plugin>
+                   <groupId>org.zeroturnaround</groupId>
+                   <artifactId>jrebel-maven-plugin</artifactId>
+                   <version>1.1.3</version>
+                   <executions>
+                       <execution>
+                           <id>generate-rebel-xml</id>
+                           <phase>process-resources</phase>
+                           <goals>
+                               <goal>generate</goal>
+                           </goals>
+                       </execution>
+                   </executions>
+               </plugin>
+           -->
+            <!-- http://docs.codehaus.org/display/JETTY/Maven+Jetty+Plugin -->
+            <!-- TODO : jetty 9-->
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>8.1.14.v20131031</version>
+                <configuration>
+                    <webApp>
+                        <contextPath>/share</contextPath>
+                    </webApp>
+                    <reload>automatic</reload>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <connectors>
+                        <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+                            <port>8181</port>
+                            <maxIdleTime>60000</maxIdleTime>
+                        </connector>
+                    </connectors>
+                    <war>${project.build.directory}/share</war>
+                    <useTestScope>true</useTestScope>
+                    <!-- configure SLF4J to use Log4J -->
+                    <systemProperties>
+                        <systemProperty>
+                            <name>org.apache.commons.logging.Log</name>
+                            <value>org.apache.commons.logging.impl.Log4JLogger</value>
+                        </systemProperty>
+                    </systemProperties>
+
+                </configuration>
+                <dependencies>
+                    <!-- add SLF4J and Log4J to the plugin classpath to prevent logging to stderr -->
+                    <dependency>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-api</artifactId>
+                        <version>1.6.4</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                        <version>1.6.4</version>
+                    </dependency>
+                </dependencies>
+                <!-- <executions> <execution> <id>run-amp-to-war</id> <goals> <goal>run-exploded</goal> </goals> <phase>pre-integration-test</phase> </execution> </executions> -->
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

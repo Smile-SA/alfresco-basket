@@ -1,0 +1,162 @@
+<!-- 
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+<extension>
+  <modules>
+    <module>
+      <id>Smile Panier Extension</id>  
+      <auto-deploy>true</auto-deploy>
+      <!-- Components -->
+       <components>
+        <component>
+        	<scope>page</scope>
+        	<region-id>component-2-2</region-id>
+        	<source-id>user/{userid}/dashboard</source-id>
+        	<sub-components>
+				<sub-component id="default">
+				   <url>/panier/components/dashlets/my-selection</url>
+				    <properties>
+                		<height>240</height>
+             		</properties>        
+				</sub-component>
+			</sub-components>							
+        	</component> 
+        	
+        <component>
+        	<scope>page</scope>
+        	<region-id>search</region-id>
+        	<source-id>search</source-id>
+        	<sub-components>
+				<sub-component id="default">
+				   <url>/panier/components/search/panier-search</url>				         
+				</sub-component>
+			</sub-components>							
+        	</component>
+        </components>
+      
+       <!-- Configuration -->
+      <configurations>   	   		
+		<config evaluator="string-compare" condition="DocumentLibrary">
+	    	<toolbar-actions>				
+	         	<action type="action-link" id="onActionAddToSelectionTo" asset="document" label="menu.selected-items.addtoselection" />	         	
+	    	</toolbar-actions>
+		</config>
+        
+        
+          
+		<config evaluator="string-compare" condition="DocLibActions">
+			<actions>
+				<action id="document-addToSelection-to" type="javascript" label="smile.panier.action.document.addToSelection-to" icon="addToSelection-to">
+					<param name="function">onActionAddToSelectionTo</param>
+				</action>
+				<action id="folder-copyBasket-to" type="javascript" label="smile.panier.action.document.copyBasket-to" icon="copyBasket-to">
+            		<param name="function">onActionCopyBasketTo</param>
+         		</action>
+			</actions>
+		 	
+		 	<actionGroups>
+				<actionGroup id="document-browse">
+					<action index="400" id="document-addToSelection-to"/>
+			 	</actionGroup>
+			 	<actionGroup id="document-details">
+				 	<action index="400" id="document-addToSelection-to"/>
+				</actionGroup>
+			</actionGroups>	
+			<actionGroups>
+				<actionGroup id="folder-browse">
+					<action index="400" id="folder-copyBasket-to"/>
+			 	</actionGroup>
+			 	<actionGroup id="folder-details">
+				 	<action index="400" id="folder-copyBasket-to"/>
+				</actionGroup>
+			</actionGroups>
+			
+		</config>
+	
+		<config evaluator="string-compare" condition="DocLibCustom">
+			<dependencies>
+				<js src="extension/panier/components/actions/add-to-selection-to-actions.js" />
+				<js src="extension/panier/components/actions/copy-basket-to-actions.js" />					
+			</dependencies>
+		</config>
+		
+		<config replace="true">          
+	      <header>
+              <legacy-mode-enabled>true</legacy-mode-enabled>
+
+              <app-items>
+	            <!-- defaults: icon="{id}.png" label="header.{id}.label" description="header.{id}.description" -->
+	            <item type="link" id="my-dashboard">{userdashboardpage}</item>
+	            <item type="js" id="sites">Alfresco.module.Sites</item>
+	            <item type="link" id="people">/people-finder</item>
+				<item type="link" id="my-basket">/fr/smile/panier/manage-panier</item>
+	            <item type="link" id="repository" condition="conditionRepositoryRootNode">/repository</item>
+	            <item type="container" id="more">
+	               <container-group id="my">
+	                  <item type="link" id="my-tasks">/my-tasks</item>
+	                  <item type="link" id="my-workflows">/my-workflows</item>
+	                  <item type="link" id="my-content">/user/user-content</item>
+	                  <item type="link" id="my-sites">/user/user-sites</item>
+	                  <item type="link" id="my-profile">{userprofilepage}</item>
+	               </container-group>
+	               <container-group id="tools" permission="admin">
+	                  <item type="link" id="application">/console/admin-console/application</item>
+	                  <item type="link" id="groups">/console/admin-console/groups</item>
+	                  <item type="link" id="replication-jobs" condition="!conditionEditionTeam">/console/admin-console/replication-jobs</item>
+	                  <item type="link" id="repository">/console/admin-console/repository</item>
+	                  <item type="link" id="trashcan">/console/admin-console/trashcan</item>
+	                  <item type="link" id="users">/console/admin-console/users</item>
+	                  <item type="link" id="more">/console/admin-console/</item>
+	               </container-group>
+	            </item>
+	         </app-items>
+	         <user-items>
+	            <item type="container" id="user" icon="" description="">
+	               <container-group id="usermenu" label="">
+	                  <item type="user" id="status">{userprofilepage}</item>
+	                  <item type="link" id="my-profile">{userprofilepage}</item>
+	                  <item type="link" id="change-password" condition="user.capabilities.isMutable">/user/change-password</item>
+	                  <item type="external-link" id="help">{share-help}</item>
+	                  <item type="link" id="logout" condition="!context.externalAuthentication">/dologout</item>
+	               </container-group>
+	            </item>
+	         </user-items>
+	         <dependencies>
+	            <css src="/modules/create-site.css" />
+	            <css src="/modules/header/sites.css" />
+	            <css src="/extension/panier/modules/header/smile.css" />
+	            <js src="/modules/create-site.js" />
+	            <js src="/modules/header/sites.js" />
+	            <js src="/extension/panier/modules/header/smile.js"/>
+	         </dependencies>
+	      </header>
+		</config>
+        </configurations>
+          <customization>
+              <targetPackageRoot>org.alfresco.share.header</targetPackageRoot>
+              <dependencies>
+                  <css src="/modules/create-site.css" />
+                  <css src="/modules/header/sites.css" />
+                  <css src="/extension/panier/modules/header/smile.css" />
+                  <js src="/modules/create-site.js" />
+                  <js src="/modules/header/sites.js" />
+                  <js src="/extension/panier/modules/header/smile.js"/>
+              </dependencies>
+          </customization>-->
+    </module>
+  </modules>
+</extension>

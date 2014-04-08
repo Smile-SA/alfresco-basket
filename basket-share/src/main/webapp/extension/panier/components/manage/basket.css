@@ -1,0 +1,171 @@
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+.basket
+{
+   color: #000;
+   margin: 1em 0 0;
+}
+
+.basket.list
+{
+   margin-bottom: 10px;
+}
+
+.basket .finder-wrapper
+{
+   border: 1px solid #c0c0c0;
+   margin-top: 10px;
+}
+
+.basket .results table
+{
+   width: 100%;
+   border: none;
+}
+
+.basket .results table thead
+{
+   display: none;
+}
+
+.basket .yui-dt td
+{
+   border-bottom: 1px dashed #D7D7D7;
+   border-right: medium none;
+}
+
+.basket .yui-dt-last td
+{
+   border-bottom: medium none;
+}
+
+.basket tr.yui-dt-odd,
+.basket tr.yui-dt-even
+{
+   background-color: #ffffff;
+   cursor: auto;
+}
+
+.basket .title
+{
+   color: #008000;
+   font-size: 108%;
+}
+
+.basket .search-bar
+{
+   border-bottom: 1px dashed #c0c0c0;
+   height: 2em;
+   padding: 0.5em;
+}
+
+.basket .search-bar div
+{
+   float: left;
+}
+
+.basket .search-text
+{
+   padding: 0.3em 1em 0.5em 0.5em;
+}
+
+.basket .search-text input
+{
+   width: 20em;
+}
+
+.basket .search-button button
+{
+   background: transparent url(../images/search-16.png) no-repeat 12px 4px;
+   padding-left: 32px;
+}
+
+.basket .results
+{
+   clear: both;
+   overflow: auto;
+   position: relative !important;
+}
+
+.basket .itemname
+{
+   padding-bottom: 0.2em;
+}
+
+.basket .detail
+{
+   line-height: 1.4em;
+}
+
+.basket .detail span
+{
+   color: #656565;
+}
+
+.basket .user-status
+{
+   margin-top: 4px;
+}
+
+.basket .help span
+{
+   display: block;
+   padding: 0.5em;
+}
+
+.basket .help .title
+{
+   font-size: 116%;
+}
+
+.basket .help .subtitle
+{
+   font-weight: bold;
+}
+
+.basket .help .example
+{
+   font-style: italic;
+}
+
+/* Compact Mode */
+.basket.compact div.title
+{
+   display: none;
+}
+
+.basket.compact .search-text input
+{
+   width: 14em;
+}
+
+.basket.compact .results
+{
+   height: 160px;
+}
+
+.basket.compact img.avatar
+{
+   width: 32px;
+}
+
+.basket.compact div.detail
+{
+   display: inline;
+}
