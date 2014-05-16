@@ -21,7 +21,7 @@
 	<bean id="smile.panier.webscripts.resources" class="org.springframework.extensions.surf.util.ResourceBundleBootstrapComponent">
       <property name="resourceBundles">
          <list>           
-            <value>alfresco.messages.smile.module.panier.smile_panier_slingshot</value>
+            <value>alfresco.messages.smile.module.panier.smile-panier-slingshot</value>
          </list>
       </property>
    </bean>
