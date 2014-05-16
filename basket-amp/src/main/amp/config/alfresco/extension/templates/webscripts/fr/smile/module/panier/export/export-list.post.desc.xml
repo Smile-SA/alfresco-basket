@@ -18,7 +18,7 @@
 <webscript>
   <shortname>export-list</shortname>
   <description>Delete one document from user's list</description>
-  <url>/export/list/delete</url>
+  <url>/basket/export/list/delete</url>
   <format default="json">argument</format>
   <authentication>user</authentication>
   <transaction>required</transaction>

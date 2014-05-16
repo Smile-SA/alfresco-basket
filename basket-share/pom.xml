@@ -89,7 +89,7 @@
                     <webApp>
                         <contextPath>/share</contextPath>
                     </webApp>
-                    <reload>automatic</reload>
+                    <reload>manual</reload>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <connectors>
                         <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">

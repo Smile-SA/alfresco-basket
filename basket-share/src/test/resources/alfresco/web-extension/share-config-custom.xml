@@ -19,7 +19,7 @@
                     Developers can set mode to 'production' or 'development' (to disable; SpringSurf caches,
                     FreeMarker template caching and Rhino JavaScript compilation.)
                 -->
-                <mode>development</mode>
+                <mode>production</mode>
             </autowire>
         </web-framework>
     </config>

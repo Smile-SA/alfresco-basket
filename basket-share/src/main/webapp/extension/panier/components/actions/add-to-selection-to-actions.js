@@ -21,6 +21,8 @@
         actionName: "onActionAddToSelectionTo",
         fn: function onActionAddToSelectionTo(record) {
         	var tmpnodeRef = [];
+
+
       	  if (YAHOO.lang.isArray(record))
             {
                for (var i = 0, il = record.length; i < il; i++)

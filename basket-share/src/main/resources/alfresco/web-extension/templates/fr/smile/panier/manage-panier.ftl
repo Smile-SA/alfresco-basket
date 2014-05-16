@@ -16,20 +16,27 @@
  * under the License.
 -->
 <#include "/org/alfresco/include/alfresco-template.ftl" />
-<@templateHeader />
+<@templateHeader/>
 
 <@templateBody>
+   <@markup id="alf-hd">
    <div id="alf-hd">
-      <@region id="header" scope="global" />
-      <@region id="title" scope="template" />
+      <@region scope="global" id="share-header" chromeless="true"/>
    </div>
-   <div id="bd">
-      <@region id="basket" scope="template" />
-   </div>
+   </@>
+
+      <@markup id="bd">
+      <div id="bd">
+         <@region id="basket" scope="template" />
+      </div>
+      </@>
+
 </@>
 
 <@templateFooter>
+   <@markup id="alf-ft">
    <div id="alf-ft">
       <@region id="footer" scope="global" />
    </div>
+   </@>
 </@>

@@ -18,7 +18,7 @@
 <webscript>
   <shortname>export-list</shortname>
   <description>Get the document user's list</description>
-  <url>/export/list/get</url>
+  <url>/basket/export/list/get</url>
   <format default="json">argument</format>
   <authentication>user</authentication>
   <transaction>required</transaction>

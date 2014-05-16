@@ -208,7 +208,7 @@
        */
       getWebscriptUrl: function MySelection_getWebscriptUrl()
       {
-         return Alfresco.constants.PROXY_URI + "export/list/get";
+         return Alfresco.constants.PROXY_URI + "basket/export/list/get";
       },
       /**
        * Add by Smile in share.js in order to override it.
@@ -412,7 +412,7 @@
 			if(this.selectedFiles[0]==null){
 				return;// If someone has checked the help message ...
 			}
-			var url = Alfresco.constants.PROXY_URI + "export/list/delete";
+			var url = Alfresco.constants.PROXY_URI + "basket/export/list/delete";
 			         
 			Alfresco.util.Ajax.request({
 				method : Alfresco.util.Ajax.POST,//yes POST and NOT delete, delete does not support content 

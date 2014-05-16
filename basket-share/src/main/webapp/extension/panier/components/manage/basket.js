@@ -150,7 +150,7 @@
       {  
     	  var me = this;
     	// DataSource Selection definition
-			var uriSelectionSearchResults = Alfresco.constants.PROXY_URI + "export/list/get";
+			var uriSelectionSearchResults = Alfresco.constants.PROXY_URI + "basket/export/list/get";
 			this.widgets.dataSource = new YAHOO.util.DataSource(
 					uriSelectionSearchResults,
 					{
@@ -699,7 +699,7 @@
 		if(this.selectedFiles[0]==null){
 			return;// If someone has checked the help message ...
 		}
-		var url = Alfresco.constants.PROXY_URI + "export/list/delete";
+		var url = Alfresco.constants.PROXY_URI + "basket/export/list/delete";
 		         
 		Alfresco.util.Ajax.request({
 			method : Alfresco.util.Ajax.POST,//yes POST and NOT delete, delete does not support content 

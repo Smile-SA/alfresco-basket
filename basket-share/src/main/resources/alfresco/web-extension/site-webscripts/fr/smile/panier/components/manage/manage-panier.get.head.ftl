@@ -15,7 +15,7 @@
  * specific language governing permissions and limitations
  * under the License.
 -->
-<#include "/org/alfresco/components/component.head.inc">
+
 <!-- Basket -->
 <@link rel="stylesheet" type="text/css" href="${page.url.context}/res/extension/panier/components/manage/basket.css" />
 <@script type="text/javascript" src="${page.url.context}/res/extension/panier/components/manage/basket.js"></@script>

@@ -73,7 +73,7 @@
 				});
 							
 		// DataSource Selection definition
-		var uriSelectionSearchResults = Alfresco.constants.PROXY_URI + "export/list/get";
+		var uriSelectionSearchResults = Alfresco.constants.PROXY_URI + "basket/export/list/get";
 		this.widgets.SelectiondataSource = new YAHOO.util.DataSource(
 				uriSelectionSearchResults,
 				{
