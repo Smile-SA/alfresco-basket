@@ -15,7 +15,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.alfresco.module.panier.web.scripts;
+package fr.smile.alfresco.module.panier.scripts;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,7 +29,7 @@ import java.util.zip.ZipOutputStream;
 import javax.servlet.http.HttpServletResponse;
 
 import org.alfresco.model.ContentModel;
-import org.alfresco.module.panier.service.SmilePanierService;
+import fr.smile.alfresco.module.panier.service.SmilePanierService;
 import org.alfresco.repo.content.MimetypeMap;
 import org.alfresco.repo.security.authentication.AuthenticationUtil;
 import org.alfresco.service.ServiceRegistry;

@@ -18,7 +18,7 @@
  * under the License.
 -->
 <beans>
-	<bean id="webscript.fr.smile.module.panier.exportZip.smilePanierExportZip.get" class="org.alfresco.module.panier.web.scripts.SmilePanierExportZipWebScript" parent="webscript">               
+	<bean id="webscript.fr.smile.module.panier.exportZip.smilePanierExportZip.get" class="fr.smile.alfresco.module.panier.scripts.SmilePanierExportZipWebScript" parent="webscript">
         <property name="services">
             <ref bean="ServiceRegistry"/>
         </property>  

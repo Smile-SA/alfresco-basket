@@ -18,12 +18,12 @@
  * under the License.
 -->
 <beans>
-    <bean id="smilePanierService" class="org.alfresco.module.panier.service.SmilePanierServiceImpl">    	
+    <bean id="smilePanierService" class="fr.smile.alfresco.module.panier.service.SmilePanierServiceImpl">
     	<property name="nodeService" ref="nodeService"/>    	
     	<property name="copyService" ref="copyService"/>        
     </bean>
     
-      <bean id="smilePanierServiceScript" parent="baseJavaScriptExtension" class="org.alfresco.module.panier.script.SmilePanierServiceScript">
+      <bean id="smilePanierServiceScript" parent="baseJavaScriptExtension" class="fr.smile.alfresco.module.panier.script.SmilePanierServiceScript">
         <property name="extensionName">
             <value>smilePanierService</value>
         </property>

@@ -15,7 +15,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.alfresco.module.panier.service;
+package fr.smile.alfresco.module.panier.service;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.alfresco.model.ContentModel;
-import org.alfresco.module.panier.model.SmilePanierModel;
+import fr.smile.alfresco.module.panier.model.SmilePanierModel;
 import org.alfresco.service.cmr.model.FileExistsException;
 import org.alfresco.service.cmr.repository.AssociationRef;
 import org.alfresco.service.cmr.repository.ChildAssociationRef;
@@ -84,7 +84,7 @@ public class SmilePanierServiceImpl implements SmilePanierService {
 
 	
 	/* (non-Javadoc)
-	 * @see org.alfresco.module.panier.service.SmilePanierService#addToSelection(java.util.Collection, org.alfresco.service.cmr.repository.NodeRef)
+	 * @see fr.smile.alfresco.module.panier.service.SmilePanierService#addToSelection(java.util.Collection, org.alfresco.service.cmr.repository.NodeRef)
 	 */
 	@Override
 	public void addToSelection(Collection<NodeRef> listToAdd, NodeRef user)
@@ -108,7 +108,7 @@ public class SmilePanierServiceImpl implements SmilePanierService {
 	}
 
 	/* (non-Javadoc)
-	 * @see org.alfresco.module.panier.service.SmilePanierService#removeFromSelection(java.util.List, org.alfresco.service.cmr.repository.NodeRef)
+	 * @see fr.smile.alfresco.module.panier.service.SmilePanierService#removeFromSelection(java.util.List, org.alfresco.service.cmr.repository.NodeRef)
 	 */
 	@Override
 	public void removeFromSelection(List<NodeRef> list, NodeRef user)
@@ -138,7 +138,7 @@ public class SmilePanierServiceImpl implements SmilePanierService {
 	}
 
 	/* (non-Javadoc)
-	 * @see org.alfresco.module.panier.service.SmilePanierService#resetSelection(org.alfresco.service.cmr.repository.NodeRef)
+	 * @see fr.smile.alfresco.module.panier.service.SmilePanierService#resetSelection(org.alfresco.service.cmr.repository.NodeRef)
 	 */
 	@Override
 	public void resetSelection(NodeRef user){
@@ -147,7 +147,7 @@ public class SmilePanierServiceImpl implements SmilePanierService {
 	}
 
 	/* (non-Javadoc)
-	 * @see org.alfresco.module.panier.service.SmilePanierService#getSelection(org.alfresco.service.cmr.repository.NodeRef)
+	 * @see fr.smile.alfresco.module.panier.service.SmilePanierService#getSelection(org.alfresco.service.cmr.repository.NodeRef)
 	 */
 	@Override
 	public List<NodeRef> getSelection(NodeRef user){
@@ -159,11 +159,11 @@ public class SmilePanierServiceImpl implements SmilePanierService {
 		for (AssociationRef assoc : assocs) {
 			list.add(assoc.getTargetRef());
 		}
-		return list;
+        return list;
 	}
 
 	/* (non-Javadoc)
-	 * @see org.alfresco.module.panier.service.SmilePanierService#addToSelection(org.alfresco.service.cmr.repository.NodeRef, org.alfresco.service.cmr.repository.NodeRef)
+	 * @see fr.smile.alfresco.module.panier.service.SmilePanierService#addToSelection(org.alfresco.service.cmr.repository.NodeRef, org.alfresco.service.cmr.repository.NodeRef)
 	 */
 	@Override
 	public void addToSelection(NodeRef nodeRef, NodeRef user) throws FileExistsException {
@@ -248,7 +248,7 @@ public class SmilePanierServiceImpl implements SmilePanierService {
 	}
 
 	/* (non-Javadoc)
-	 * @see org.alfresco.module.panier.service.SmilePanierService#createPanier(org.alfresco.service.cmr.repository.NodeRef)
+	 * @see fr.smile.alfresco.module.panier.service.SmilePanierService#createPanier(org.alfresco.service.cmr.repository.NodeRef)
 	 */
 	public NodeRef createPanier(NodeRef user){
 		LOGGER.debug("CreatePanier for user "+user.toString());			
@@ -262,7 +262,7 @@ public class SmilePanierServiceImpl implements SmilePanierService {
 
 
 	/* (non-Javadoc)
-	 * @see org.alfresco.module.panier.service.SmilePanierService#copyBasketToNodeRef(java.lang.String, org.alfresco.service.cmr.repository.NodeRef)
+	 * @see fr.smile.alfresco.module.panier.service.SmilePanierService#copyBasketToNodeRef(java.lang.String, org.alfresco.service.cmr.repository.NodeRef)
 	 */
 	@Override
 	public void copyBasketToNodeRef(String destNode, NodeRef userNode){

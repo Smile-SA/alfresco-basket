@@ -15,7 +15,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.alfresco.module.panier.service;
+package fr.smile.alfresco.module.panier.service;
 
 import java.util.Collection;
 import java.util.List;

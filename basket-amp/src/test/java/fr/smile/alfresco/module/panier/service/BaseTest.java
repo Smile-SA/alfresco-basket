@@ -1,4 +1,4 @@
-package org.alfresco.module.panier.service;
+package fr.smile.alfresco.module.panier.service;
 
 import com.tradeshift.test.remote.Remote;
 import com.tradeshift.test.remote.RemoteTestRunner;

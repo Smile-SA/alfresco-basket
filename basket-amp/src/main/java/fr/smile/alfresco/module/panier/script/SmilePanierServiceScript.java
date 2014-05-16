@@ -15,13 +15,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.alfresco.module.panier.script;
+package fr.smile.alfresco.module.panier.script;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.alfresco.jlan.server.filesys.FileExistsException;
-import org.alfresco.module.panier.service.SmilePanierService;
+import fr.smile.alfresco.module.panier.service.SmilePanierService;
 import org.alfresco.repo.jscript.BaseScopableProcessorExtension;
 import org.alfresco.repo.jscript.ScriptNode;
 import org.alfresco.scripts.ScriptException;

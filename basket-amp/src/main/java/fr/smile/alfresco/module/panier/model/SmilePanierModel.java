@@ -15,7 +15,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.alfresco.module.panier.model;
+package fr.smile.alfresco.module.panier.model;
 
 import org.alfresco.service.namespace.QName;
 

@@ -18,33 +18,7 @@
  * under the License.
 -->
 <beans>
-    <!--
-    <bean id="patch.smile.panier.add.paniers.container" class="org.alfresco.repo.admin.patch.impl.GenericBootstrapPatch" parent="basePatch" >
-        <property name="id"><value>patch.smile.panier.add.paniers.container.0.1</value></property>
-        <property name="description"><value>patch.smile.panier.add.paniers.container.description</value></property>
-        <property name="fixesFromSchema">
-			<value>0</value>
-		</property>
-		<property name="fixesToSchema"> 
-			<value>${version.schema}</value>
-		</property>
-		<property name="targetSchema">
-			<value>10000</value>
-		</property>	
-        <property name="importerBootstrap">
-            <ref bean="spacesBootstrap" />
-        </property>
-        <property name="checkPath">
-            <value>/${spaces.company_home.childname}/${spaces.dictionary.childname}/cm:Paniers</value>
-        </property>
-        <property name="bootstrapView">
-            <props>
-                <prop key="path">/${spaces.company_home.childname}/${spaces.dictionary.childname}</prop>
-                <prop key="location">alfresco/module/panier/bootstrap/smile-add-paniers-container.xml</prop>
-                <prop key="messages">alfresco/module/panier/messages/smile-panier-bootstrap-spaces</prop>
-            </props>
-        </property>
-    </bean>-->
+
     <bean id="basket.bootstrapSpaces" class="org.alfresco.repo.module.ImporterModuleComponent"
           parent="module.baseComponent">
         <property name="moduleId" value="basket-amp" />

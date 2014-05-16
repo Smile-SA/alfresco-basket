@@ -5,7 +5,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
    <description>Smile Panier Model</description>
-   <author>Smile : Thierry Morin</author>
+   <author>Smile : Thierry Morin/Alexis Thaveau</author>
    <version>1.0</version>
 
    <imports>
