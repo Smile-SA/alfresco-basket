@@ -6,7 +6,7 @@
                       config: {
                          id: "HEADER_MY_BASKET",
                          label: "header.menu.my-basket.label",
-                         targetUrl: "/fr/smile/panier/manage-panier"
+                         targetUrl: "fr/smile/panier/manage-panier"
                       }
                    });
    }
