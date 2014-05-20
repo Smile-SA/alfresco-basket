@@ -11,4 +11,8 @@ With this module, user can :
 - past basket content into a folder
 - download basket as zip
 
+Build
+--------
+
 Installation
+--------
