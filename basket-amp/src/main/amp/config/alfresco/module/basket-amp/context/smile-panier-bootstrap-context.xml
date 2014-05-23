@@ -18,7 +18,7 @@
  * under the License.
 -->
 <beans>
-    <bean id="smilemodelBootstrap" parent="dictionaryModelBootstrap" depends-on="dictionaryBootstrap">
+    <bean id="basket.ModelBootstrap" parent="dictionaryModelBootstrap" depends-on="dictionaryBootstrap">
         <property name="models">
             <list>
                 <value>alfresco/module/${project.artifactId}/model/smile-panier-model.xml</value>
