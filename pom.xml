@@ -13,7 +13,9 @@
         <artifactId>alfresco-sdk-parent</artifactId>
         <version>1.1.1</version>
     </parent>
-    
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+    </build>
     <!-- 
        | SDK properties have sensible defaults in the SDK parent, but you can override the properties below to use another version. 
        | For more available properties see the alfresco-sdk-parent POM. 
