@@ -23,20 +23,11 @@ public interface SmilePanierModel {
     String SMILE_PANIER_MODEL_URI            = "http://www.smile.fr/model/panier/1.0";
     String SMILE_PANIER_MODEL_PREFIX         = "panier";
     QName  TYPE_PANIER			   = QName.createQName(SMILE_PANIER_MODEL_URI, "list");
-    QName  PROP_EXPORT_GENERATED_FILE  = QName.createQName(SMILE_PANIER_MODEL_URI, "generatedFile");
     QName  ASSOCIATION_EXPORT_ELEMENT   = QName.createQName(SMILE_PANIER_MODEL_URI, "elements");
-    
     QName ASPECT_PANIER_ATTACHMENT = QName.createQName(SMILE_PANIER_MODEL_URI, "panierAttachmentAspect");
     QName ASSOC_MON_PANIER  = QName.createQName(SMILE_PANIER_MODEL_URI, "monPanier");
     
-    QName ASPECT_CONTENT_PRESENT_IN_PANIER = QName.createQName(SMILE_PANIER_MODEL_URI, "contentPresentInPanier");
-    QName ASSOC_PRESENT_IN_PANIER_OF  = QName.createQName(SMILE_PANIER_MODEL_URI, "presentInPanierOf");
-    
-    
-    
-    /**
-     * Does not include the extension for extensibility purpose
-     */
-    String EXPORT_GENERATED_FILE_NAME  = "export_selection";      
+
+
 
 }
