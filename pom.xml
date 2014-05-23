@@ -78,9 +78,6 @@
   <modules>
     <module>basket-amp</module>
     <module>basket-share</module>
-    <!--
-    <module>alfresco</module>    
-    <module>share</module>
-    <module>runner</module>-->
+    <module>basket-share-amp</module>
   </modules>
 </project>
