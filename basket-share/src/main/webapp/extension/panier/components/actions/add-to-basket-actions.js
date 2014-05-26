@@ -52,6 +52,7 @@
 	               {	            	  
 	                   var successCount = res.json.successCount;
 	                   var failureCount = res.json.failureCount;
+	                   var totalResults = res.json.totalResults;
 	                   var results = res.json.results;
 	                   var thefiles = "";
 		               // Did the operation NOT succeed?	                   
@@ -65,24 +66,46 @@
 		            			   thefiles = thefiles + results[i].name + "\r\n";
 		            		   }
 		            	   }
-		            	   
-		            	   Alfresco.util.PopupManager.displayPrompt(
-		                           {
-		                              text: this.msg("smile.panier.add.selection.success.one.file.already.exists",thefiles)
-		                           });              
+		            	   var errormsgkey;
+		            	   if(totalResults==1){
+		            	    Alfresco.util.PopupManager.displayPrompt(
+                                {
+                                    text: this.msg("smile.panier.add.selection.success.file.already.exist")
+                                });
+		            	   }else{
+		            	    Alfresco.util.PopupManager.displayPrompt(
+                                {
+                            	    text: this.msg("smile.panier.add.multi.selection.success.file.already.exist",successCount, thefiles)
+                                });
+		            	   }
+
+
 		                  return;
 		               }
 		               else if(!res.json.overallSuccess && successCount == 0){
+		               var errormsgkey;
+                       if(totalResults==1){
+                        errormsgkey = "smile.panier.add.selection.success.all.files.already.exist";
+                       }else{
+                        errormsgkey = "smile.panier.add.selection.success.all.files.already.exists";
+                       }
+
 		            	   Alfresco.util.PopupManager.displayPrompt(
                            {
-                              text: this.msg("smile.panier.add.selection.success.all.files.already.exists")
+                              text: this.msg(errormsgkey)
                            });              
 		                  return;
 		               }
-	            	   
+		               var msginfo;
+
+	            	   if(successCount==1){
+	            	    msginfo = this.msg("smile.panier.add.selection.success");
+	            	   }else {
+	            	   msginfo = this.msg("smile.panier.add.multi.selection.success", successCount);
+	            	   }
 		               Alfresco.util.PopupManager.displayMessage(
 	                   {
-	                      text: this.msg("smile.panier.add.selection.success")
+	                      text: msginfo
 	                      
 	                   });
 	               },

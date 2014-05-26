@@ -37,7 +37,7 @@
                {
             	   Alfresco.util.PopupManager.displayMessage(
 		  	            {
-		  	               text: "Copie Effectuee"
+		  	               text: this.msg("smile.panier.message.copybasket.success")
 		  	            });
                },
                scope: this
@@ -47,7 +47,7 @@
                {
   				Alfresco.util.PopupManager.displayMessage(
   			            {
-  			               text: "Une erreur est survenue"
+  			               text: this.msg("message.failure")
   			            });
                },
                scope: this
