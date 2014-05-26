@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>fr.smile.alfresco</groupId>
     <artifactId>basket</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <name>Alfresco basket extension</name>
     <description>Allow user to manage a selection of documents</description>
     <packaging>pom</packaging>    
