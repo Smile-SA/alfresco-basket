@@ -4,8 +4,8 @@
     <groupId>fr.smile.alfresco</groupId>
     <artifactId>basket</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>Quickstart of Alfresco and Share with DB and runner embedded</name>
-    <description>This All-in-One project allows to manage all the components involved in Alfresco development (Repo, Share, Solr, AMPs) in one project</description>
+    <name>Alfresco basket extension</name>
+    <description>Allow user to manage a selection of documents</description>
     <packaging>pom</packaging>    
 
     <parent>
@@ -28,7 +28,7 @@
         <alfresco.groupId>org.alfresco</alfresco.groupId>
         <!-- Defines the Alfresco version to work against. Allowed values are: org.alfresco | org.alfresco.enterprise -->
         <!--<alfresco.version>4.2.e</alfresco.version>-->
-        <alfresco.version>4.2.1</alfresco.version>
+        <alfresco.version>4.2.e</alfresco.version>
         <!-- This control the root logging level for all apps -->
         <app.log.root.level>WARN</app.log.root.level>
         <!-- This controls the default data location for dir.root -->
