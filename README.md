@@ -42,3 +42,4 @@ A new screen "Manage basket" is available to browse and manage basket content :
 
 A dashlet "my basket" is available in user dashboard. This dashlet display basket content and allow user to manage his basket.
 
+
