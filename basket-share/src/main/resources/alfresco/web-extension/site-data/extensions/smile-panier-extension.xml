@@ -35,17 +35,6 @@
                         </sub-component>
                     </sub-components>
                 </component>
-
-                <component>
-                    <scope>page</scope>
-                    <region-id>search</region-id>
-                    <source-id>search</source-id>
-                    <sub-components>
-                        <sub-component id="default">
-                            <url>/panier/components/search/panier-search</url>
-                        </sub-component>
-                    </sub-components>
-                </component>
             </components>
 
             <!-- Configuration -->
@@ -91,7 +80,7 @@
 
                 <config evaluator="string-compare" condition="DocLibCustom">
                     <dependencies>
-                        <js src="extension/panier/components/actions/add-to-selection-to-actions.js"/>
+                        <js src="extension/panier/components/actions/add-to-basket-actions.js"/>
                         <js src="extension/panier/components/actions/copy-basket-to-actions.js"/>
                         <css src="extension/panier/components/actions/actions.css"/>
                     </dependencies>
