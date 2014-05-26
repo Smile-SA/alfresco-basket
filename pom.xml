@@ -14,9 +14,9 @@
         <version>1.1.1</version>
     </parent>
     <scm>
-        <connection>scm:git:git@github.com:Smile-SA/alfresco-basket.git</connection>
+        <connection>scm:git:https@github.com:Smile-SA/alfresco-basket.git</connection>
         <url>https://github.com/Smile-SA/alfresco-basket</url>
-        <developerConnection>scm:git:git@github.com:Smile-SA/alfresco-basket.git</developerConnection>
+        <developerConnection>scm:git:https@github.com:Smile-SA/alfresco-basket.git</developerConnection>
     </scm>
     <build>
         <finalName>${project.artifactId}-${project.version}</finalName>
