@@ -62,7 +62,7 @@ function main(){
 }
 
 function findNodeByNodeRef(nodeRef) {
-	var resultsArray = search.luceneSearch("ID:workspace\\://SpacesStore/" + getGUIDFromNodeRef(nodeRef));
+	var resultsArray = search.luceneSearch("workspace\\://SpacesStore/" + nodeRef);
 	if (resultsArray != null && resultsArray.length > 0) {
 		return resultsArray[0];
 	} else {
@@ -70,13 +70,5 @@ function findNodeByNodeRef(nodeRef) {
 	}
 }
 
-function getGUIDFromNodeRef(nodeRef) {
-	var str = "" + nodeRef;
-	if (str.length > 24) {
-		return str.substring(24);
-	} else {
-		return "";
-	}
-}
 
 main();
